@@ -1,0 +1,7 @@
+@use 'tokens' as t;
+@use 'components';
+body { background:t.$background; color:t.$text; }
+.catalog-toolbar { display:flex; flex-wrap:wrap; gap:t.$space; align-items:end; margin-block:24px; > div { flex:1 1 180px; } }
+.catalog-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:t.$space; }
+@media(max-width:950px) { .catalog-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:560px) { .catalog-grid { grid-template-columns:1fr; } }

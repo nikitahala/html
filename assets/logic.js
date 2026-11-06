@@ -1,0 +1,2 @@
+export function filterCatalog(items,query='',category='',sort='default'){const normalized=query.trim().toLocaleLowerCase('ru');const result=items.filter(item=>item.name.toLocaleLowerCase('ru').includes(normalized)&&(!category||item.category===category));return result.sort((a,b)=>sort==='asc'?a.price-b.price:sort==='desc'?b.price-a.price:a.id-b.id);}
+export function nextStatus(status){return ({'Новая':'В работе','В работе':'Готово','Готово':'Готово'})[status]??'Новая';}

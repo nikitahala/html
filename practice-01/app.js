@@ -1,0 +1,1 @@
+document.querySelector('#signup-form').addEventListener('submit',event=>{event.preventDefault(); document.querySelector('#signup-status').textContent='Форма проверена. Это учебная демонстрация: заявка не отправляется и персональные данные не сохраняются.';});

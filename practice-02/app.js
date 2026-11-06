@@ -1,0 +1,5 @@
+import {filterCatalog} from '../assets/logic.js';
+const cards=[...document.querySelectorAll('.catalog-card')];
+const items=cards.map(card=>({id:Number(card.dataset.id),name:card.dataset.name,category:card.dataset.category,price:Number(card.dataset.price)}));
+function update(){const result=filterCatalog(items,document.querySelector('#search').value,document.querySelector('#category').value,document.querySelector('#sort').value); const ids=new Set(result.map(x=>x.id)); cards.forEach(card=>card.hidden=!ids.has(Number(card.dataset.id))); result.forEach(item=>document.querySelector('#catalog').append(cards.find(card=>Number(card.dataset.id)===item.id))); document.querySelector('#result-count').textContent='Найдено товаров: '+result.length; document.querySelector('#empty').hidden=result.length>0;}
+document.querySelector('#filters').addEventListener('input',update); document.querySelector('#reset').addEventListener('click',()=>{HTMLFormElement.prototype.reset.call(document.querySelector('#filters'));update();}); update();

@@ -1,0 +1,72 @@
+.catalog-card {
+  background: #ffffff;
+  border: 1px solid #dce3ef;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.catalog-card__image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #e9efff;
+}
+.catalog-card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.catalog-card__title {
+  font-size: 1.1rem;
+  margin: 12px 0;
+}
+.catalog-card__price {
+  color: #315efb;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-top: auto;
+}
+
+.catalog-badge {
+  background: #e9efff;
+  color: #315efb;
+  border-radius: 20px;
+  padding: 3px 10px;
+  align-self: flex-start;
+  font-size: 0.8rem;
+}
+
+body {
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+.catalog-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: end;
+  margin-block: 24px;
+}
+.catalog-toolbar > div {
+  flex: 1 1 180px;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 950px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
